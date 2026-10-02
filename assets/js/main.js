@@ -1781,6 +1781,92 @@
     }
   }
 
+  // Hero Interactive 3D Word Rotator & Liquid Torch Spotlight System
+  function init3DWordRotator() {
+    const box1 = document.querySelector('.hero-rotator-box');
+    const box2 = document.querySelector('.hero-rotator-box-2');
+    const wordsLine1 = document.querySelectorAll('.hero-rotator-word');
+    const wordsLine2 = document.querySelectorAll('.hero-rotator-word-2');
+    const torchGlow = document.getElementById('heroTorchGlow');
+    const heroSection = document.querySelector('.hero-editorial');
+
+    const updateBoxWidth = (box, wordElement) => {
+      if (!box || !wordElement) return;
+      // Force element display evaluation if needed
+      const width = wordElement.getBoundingClientRect().width;
+      if (width > 0) {
+        box.style.width = Math.ceil(width + 4) + 'px';
+      }
+    };
+
+    if (wordsLine1.length > 0) {
+      updateBoxWidth(box1, wordsLine1[0]);
+      let idx1 = 0;
+      setInterval(() => {
+        const current = wordsLine1[idx1];
+        if (!current) return;
+        current.classList.remove('active');
+        current.classList.add('exit');
+
+        setTimeout(() => current.classList.remove('exit'), 600);
+
+        idx1 = (idx1 + 1) % wordsLine1.length;
+        const next = wordsLine1[idx1];
+        if (next) {
+          next.classList.add('active');
+          updateBoxWidth(box1, next);
+        }
+      }, 2600);
+    }
+
+    if (wordsLine2.length > 0) {
+      updateBoxWidth(box2, wordsLine2[0]);
+      let idx2 = 0;
+      setInterval(() => {
+        const current = wordsLine2[idx2];
+        if (!current) return;
+        current.classList.remove('active');
+        current.classList.add('exit');
+
+        setTimeout(() => current.classList.remove('exit'), 600);
+
+        idx2 = (idx2 + 1) % wordsLine2.length;
+        const next = wordsLine2[idx2];
+        if (next) {
+          next.classList.add('active');
+          updateBoxWidth(box2, next);
+        }
+      }, 2600);
+    }
+
+    // Initial resize calculation after fonts render
+    setTimeout(() => {
+      if (wordsLine1[0]) updateBoxWidth(box1, wordsLine1[0]);
+      if (wordsLine2[0]) updateBoxWidth(box2, wordsLine2[0]);
+    }, 200);
+
+    if (heroSection && torchGlow) {
+      let targetX = heroSection.clientWidth / 2;
+      let targetY = heroSection.clientHeight / 2;
+      let currX = targetX;
+      let currY = targetY;
+
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        targetX = e.clientX - rect.left;
+        targetY = e.clientY - rect.top;
+      });
+
+      const updateTorch = () => {
+        currX += (targetX - currX) * 0.08;
+        currY += (targetY - currY) * 0.08;
+        torchGlow.style.transform = `translate3d(${currX}px, ${currY}px, 0)`;
+        requestAnimationFrame(updateTorch);
+      };
+      updateTorch();
+    }
+  }
+
   // Back To Top Floating Button Handler (Visible across all sections & pages)
   function initBackToTop() {
     let btn = document.getElementById('backToTop');
@@ -1813,9 +1899,13 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBackToTop);
+    document.addEventListener('DOMContentLoaded', () => {
+      initBackToTop();
+      init3DWordRotator();
+    });
   } else {
     initBackToTop();
+    init3DWordRotator();
   }
 
   // Export to global scope
