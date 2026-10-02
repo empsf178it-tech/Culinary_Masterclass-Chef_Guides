@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — CULINAIRE</title>
+  <meta name="description" content="Get in touch with the CULINAIRE Academy concierge or explore our Frequently Asked Questions.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-navbar-internal">
+
+  <!-- NAVBAR -->
+  <nav class="culinaire-navbar navbar-internal px-3 px-lg-5">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="index.html" class="brand-logo me-xl-3">
+        <span class="brand-logo-text">CULINAIRE</span>
+        <span class="brand-accent-dot"></span>
+      </a>
+
+      <div class="d-none d-xl-flex align-items-center gap-2 gap-xl-4">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="masterclasses.html" class="nav-link-custom">Masterclasses</a>
+        <a href="recipes.html" class="nav-link-custom">Chef Guides</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="contact.html" class="nav-link-custom active">Contact</a>
+      </div>
+
+      <div class="d-flex align-items-center gap-2 gap-sm-3">
+        <button class="btn-icon search-trigger-btn d-none d-xl-inline-flex" aria-label="Search"><i class="bi bi-search"></i></button>
+        <button class="btn-icon favorites-trigger-btn d-none d-xl-inline-flex" aria-label="Favorites"><i class="bi bi-heart"></i></button>
+        <button class="btn-icon auth-trigger-btn d-none d-xl-inline-flex" aria-label="Sign In / Account"><i class="bi bi-person"></i></button>
+        <a href="dashboard.html" class="btn-culinaire btn-culinaire-accent py-2 px-3 text-uppercase d-none d-xl-inline-flex">
+          <i class="bi bi-speedometer2 me-1"></i> DASHBOARD
+        </a>
+        <div class="auth-nav-slot d-none d-xl-inline-block"></div>
+        <button class="hamburger-btn d-xl-none" aria-label="Toggle Navigation"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <div class="mobile-nav-header">
+      <span class="brand-logo fs-4">CULINAIRE <span class="brand-accent-dot"></span></span>
+      <button class="btn-close mobile-nav-close" aria-label="Close"></button>
+    </div>
+
+    <!-- Quick Actions Bar inside Hamburger Drawer -->
+    <div class="mobile-nav-quick-actions">
+      <button class="mobile-nav-action-btn search-trigger-btn" aria-label="Search">
+        <i class="bi bi-search"></i>
+        <span>Search</span>
+      </button>
+      <button class="mobile-nav-action-btn favorites-trigger-btn" aria-label="Favorites">
+        <i class="bi bi-heart"></i>
+        <span>Favorites</span>
+      </button>
+      <button class="mobile-nav-action-btn auth-trigger-btn" aria-label="Sign In / Account">
+        <i class="bi bi-person"></i>
+        <span>Account</span>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="masterclasses.html" class="mobile-nav-link">Masterclasses <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="recipes.html" class="mobile-nav-link">Chef Guides <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="about.html" class="mobile-nav-link">About <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="contact.html" class="mobile-nav-link fw-bold">Contact <i class="bi bi-arrow-right"></i></a></li>
+    </ul>
+
+    <!-- Bottom CTA inside Drawer -->
+    <div class="mt-auto pt-4 border-top">
+      <a href="dashboard.html" class="btn-culinaire btn-culinaire-accent w-100 py-3 text-uppercase text-center d-flex align-items-center justify-content-center gap-2 font-heading tracking-wider">
+        <i class="bi bi-speedometer2"></i> DASHBOARD PORTAL
+      </a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="section-padding bg-surface text-center">
+    <div class="container">
+      <span class="text-overline">Concierge Services</span>
+      <h1 class="heading-editorial">Get in Touch</h1>
+      <p class="subtitle-editorial mx-auto">Have questions regarding masterclasses, membership tiers, or corporate workshops?</p>
+    </div>
+  </header>
+
+  <!-- CONTACT FORM & INFO -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Form Card -->
+        <div class="col-lg-7">
+          <div class="contact-card-luxury card-hover-tilt revealed shadow-subtle p-4 p-md-5">
+            <h3 class="font-heading mb-4">Send Us a Message</h3>
+            <form id="contact-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label text-muted small fw-medium">Full Name</label>
+                  <input type="text" class="form-control py-3" placeholder="Chef Auguste Escoffier" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label text-muted small fw-medium">Email Address</label>
+                  <input type="email" class="form-control py-3" placeholder="auguste@culinaire.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-muted small fw-medium">Subject</label>
+                  <input type="text" class="form-control py-3" placeholder="Masterclass Inquiry / Membership" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-muted small fw-medium">Message</label>
+                  <textarea class="form-control py-3" rows="5" placeholder="How can our concierge assist you?" required></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-culinaire btn-culinaire-primary w-100 py-3">
+                    SEND MESSAGE <i class="bi bi-arrow-right btn-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Info & Academy Details -->
+        <div class="col-lg-5">
+          <!-- Headquarters Card -->
+          <div class="contact-card-luxury card-hover-tilt revealed mb-4">
+            <h4 class="font-heading mb-3">London Headquarters</h4>
+            <p class="text-muted mb-2"><i class="bi bi-geo-alt text-accent me-2"></i> 74 Culinary Boulevard, Mayfair, London W1K 4QA</p>
+            <p class="text-muted mb-2"><i class="bi bi-envelope text-accent me-2"></i> concierge@culinaire.com</p>
+            <p class="text-muted mb-0"><i class="bi bi-telephone text-accent me-2"></i> +44 20 7946 0912</p>
+          </div>
+
+          <!-- Concierge Hours Card -->
+          <div class="contact-card-luxury card-hover-tilt revealed mb-4">
+            <h4 class="font-heading mb-3"><i class="bi bi-clock-history text-accent me-2"></i> Concierge Hours</h4>
+            <p class="text-muted small mb-1">Monday – Friday: 08:00 – 20:00 GMT</p>
+            <p class="text-muted small mb-0">Saturday – Sunday: 09:00 – 18:00 GMT</p>
+          </div>
+
+          <!-- Social Channels Card Below Concierge Hours -->
+          <div class="contact-card-luxury card-hover-tilt revealed">
+            <h4 class="font-heading mb-2"><i class="bi bi-share text-accent me-2"></i> Social Channels</h4>
+            <p class="text-muted small mb-3">Join our official culinary community for live masterclass releases and chef tips.</p>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <a href="#" class="contact-social-btn" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="contact-social-btn" aria-label="YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="contact-social-btn" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="contact-social-btn" aria-label="X (Twitter)" title="X"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="contact-social-btn" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE MAPS LOCATION SECTION -->
+  <section class="section-padding py-0 mb-5 map-section-editorial">
+    <div class="container">
+      <div class="text-center mb-4">
+        <span class="text-overline">Interactive Academy Map</span>
+        <h2 class="heading-editorial">Visit Our Academy Headquarters</h2>
+      </div>
+      <div class="map-wrapper-editorial position-relative">
+        <div class="map-floating-badge d-none d-sm-flex">
+          <div class="map-badge-icon">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div>
+            <h5 class="font-heading fs-6 text-white mb-0">Culinaire Academy HQ</h5>
+            <span class="text-white-50 small">Mayfair, London W1K 4QA, United Kingdom</span>
+          </div>
+        </div>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.272714774321!2d-0.1486795233800049!3d51.50821597181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876052d119e8dd7%3A0x8673f8d29b1df08a!2sMayfair%2C%20London%2C%20UK!5e0!2m3!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade" 
+          title="Culinaire Academy Headquarters Mayfair London Map">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="section-padding bg-surface">
+    <div class="container max-w-800 mx-auto">
+      <div class="text-center mb-5">
+        <span class="text-overline">Frequently Asked Questions</span>
+        <h2 class="heading-section">Everything You Need to Know</h2>
+      </div>
+
+      <div class="accordion culinaire-accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              How long do I retain access to purchased masterclasses?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              You retain lifetime access to all masterclass video materials, recipe ratios, and future course updates across all devices.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Are masterclasses suitable for complete kitchen beginners?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              Yes! Each course features a difficulty badge (Beginner, Intermediate, Advanced). Our Beginner courses like French Sauce Fundamentals start with core knife setup and pot selection.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Can I print recipe cards and lesson materials?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              Absolutely. Every recipe includes an optimized high-contrast Print Recipe button that formats clean kitchen printouts without ads or navigation menus.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer-editorial">
+    <div class="container">
+      <div class="row g-4 g-lg-5 mb-5 align-items-start">
+        <!-- Col 1: Brand & Bio -->
+        <div class="col-lg-4">
+          <a href="index.html" class="brand-logo text-white mb-3 d-inline-block">
+            CULINAIRE <span class="brand-accent-dot"></span>
+          </a>
+          <p class="text-white-50 small pe-lg-3 mb-4">
+            Learn the Craft. Master the Plate. A luxury culinary academy connecting home cooks with legendary chefs worldwide.
+          </p>
+          <div class="d-flex gap-3 text-white-50">
+            <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">Navigation</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="masterclasses.html">Masterclasses</a></li>
+            <li><a href="recipes.html">Chef Guides</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Portal Access -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">Portal Access</h5>
+          <ul class="footer-links-list">
+            <li><a href="#" class="auth-trigger-btn">Sign In</a></li>
+            <li><a href="#" class="auth-trigger-btn">Create Account</a></li>
+            <li><a href="#" class="open-dashboard-btn">Executive Portal</a></li>
+            <li><a href="#" class="open-favorites-modal">Saved Favorites</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: HQ & Academy -->
+        <div class="col-lg-4">
+          <h5 class="footer-title">HQ & Academy</h5>
+          <ul class="footer-contact-list list-unstyled small text-white-50 mb-0">
+            <li class="mb-2 d-flex align-items-start">
+              <i class="bi bi-geo-alt text-accent me-2 mt-1"></i>
+              <span>74 Culinary Boulevard, Mayfair, London W1J 8AJ, UK</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-envelope text-accent me-2"></i>
+              <a href="mailto:concierge@culinaire.com" class="text-white-50 text-decoration-none">concierge@culinaire.com</a>
+            </li>
+            <li class="mb-3 d-flex align-items-center">
+              <i class="bi bi-telephone text-accent me-2"></i>
+              <span>+44 20 7946 0912</span>
+            </li>
+          </ul>
+          <span class="footer-hours-badge">
+            <i class="bi bi-clock me-1 text-accent"></i> Mon – Sat (9:00 AM – 8:00 PM GMT)
+          </span>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-4 border-top border-secondary-subtle d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+        <p class="small text-white-50 mb-0">© 2026 CULINAIRE. All rights reserved.</p>
+        <div class="d-flex gap-4 small text-white-50">
+          <a href="about.html" class="text-white-50 text-decoration-none">Privacy Policy</a>
+          <a href="about.html" class="text-white-50 text-decoration-none">Terms of Service</a>
+          <a href="contact.html" class="text-white-50 text-decoration-none">Concierge Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

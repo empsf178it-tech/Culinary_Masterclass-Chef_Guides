@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — CULINAIRE</title>
+  <meta name="description" content="Discover the philosophy, culinary approach, and mission behind CULINAIRE Academy.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-navbar-internal">
+
+  <!-- NAVBAR -->
+  <nav class="culinaire-navbar navbar-internal px-3 px-lg-5">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="index.html" class="brand-logo me-xl-3">
+        <span class="brand-logo-text">CULINAIRE</span>
+        <span class="brand-accent-dot"></span>
+      </a>
+
+      <div class="d-none d-xl-flex align-items-center gap-2 gap-xl-4">
+        <a href="index.html" class="nav-link-custom">Home</a>
+        <a href="masterclasses.html" class="nav-link-custom">Masterclasses</a>
+        <a href="recipes.html" class="nav-link-custom">Chef Guides</a>
+        <a href="about.html" class="nav-link-custom active">About</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+      </div>
+
+      <div class="d-flex align-items-center gap-2 gap-sm-3">
+        <button class="btn-icon search-trigger-btn d-none d-xl-inline-flex" aria-label="Search"><i class="bi bi-search"></i></button>
+        <button class="btn-icon favorites-trigger-btn d-none d-xl-inline-flex" aria-label="Favorites"><i class="bi bi-heart"></i></button>
+        <button class="btn-icon auth-trigger-btn d-none d-xl-inline-flex" aria-label="Sign In / Account"><i class="bi bi-person"></i></button>
+        <a href="dashboard.html" class="btn-culinaire btn-culinaire-accent py-2 px-3 text-uppercase d-none d-xl-inline-flex">
+          <i class="bi bi-speedometer2 me-1"></i> DASHBOARD
+        </a>
+        <div class="auth-nav-slot d-none d-xl-inline-block"></div>
+        <button class="hamburger-btn d-xl-none" aria-label="Toggle Navigation"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <div class="mobile-nav-header">
+      <span class="brand-logo fs-4">CULINAIRE <span class="brand-accent-dot"></span></span>
+      <button class="btn-close mobile-nav-close" aria-label="Close"></button>
+    </div>
+
+    <!-- Quick Actions Bar inside Hamburger Drawer -->
+    <div class="mobile-nav-quick-actions">
+      <button class="mobile-nav-action-btn search-trigger-btn" aria-label="Search">
+        <i class="bi bi-search"></i>
+        <span>Search</span>
+      </button>
+      <button class="mobile-nav-action-btn favorites-trigger-btn" aria-label="Favorites">
+        <i class="bi bi-heart"></i>
+        <span>Favorites</span>
+      </button>
+      <button class="mobile-nav-action-btn auth-trigger-btn" aria-label="Sign In / Account">
+        <i class="bi bi-person"></i>
+        <span>Account</span>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="masterclasses.html" class="mobile-nav-link">Masterclasses <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="recipes.html" class="mobile-nav-link">Chef Guides <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="about.html" class="mobile-nav-link fw-bold">About <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact <i class="bi bi-arrow-right"></i></a></li>
+    </ul>
+
+    <!-- Bottom CTA inside Drawer -->
+    <div class="mt-auto pt-4 border-top">
+      <a href="dashboard.html" class="btn-culinaire btn-culinaire-accent w-100 py-3 text-uppercase text-center d-flex align-items-center justify-content-center gap-2 font-heading tracking-wider">
+        <i class="bi bi-speedometer2"></i> DASHBOARD PORTAL
+      </a>
+    </div>
+  </div>
+
+  <!-- BRAND HERO -->
+  <section class="section-padding bg-surface text-center">
+    <div class="container max-w-800 mx-auto">
+      <span class="text-overline">Our Philosophy</span>
+      <h1 class="heading-editorial mb-3">Cooking Is a Craft.</h1>
+      <p class="subtitle-editorial mx-auto">
+        CULINAIRE was founded on a singular conviction: that culinary excellence is not an innate talent reserved for restaurant kitchens, but a discipline of technique, reverence, and understanding.
+      </p>
+    </div>
+  </section>
+
+  <!-- CORE PILLARS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="card-img-wrapper rounded shadow-hover overflow-hidden" style="aspect-ratio: 4/3;">
+            <img src="assets/images/hero_chef.jpg" alt="Chef preparing dish" class="w-100 h-100 object-fit-cover">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="text-overline">Why CULINAIRE</span>
+          <h2 class="heading-section mb-3">The Academy Standard</h2>
+          <p class="drop-cap text-muted mb-4">
+            Generic online recipe videos show what ingredients to throw into a pan. CULINAIRE teaches <em>why</em> chemical reactions occur, how heat transfers through copper cookware, and how to calibrate acid, salt, and fat in real time.
+          </p>
+
+          <div class="row g-4">
+            <div class="col-sm-6">
+              <h5 class="font-heading mb-2"><i class="bi bi-award text-accent me-2"></i> Michelin Masters</h5>
+              <p class="text-muted small">Instruction directly from multi-starred executive chefs and master artisans.</p>
+            </div>
+            <div class="col-sm-6">
+              <h5 class="font-heading mb-2"><i class="bi bi-camera-video text-accent me-2"></i> 4K Studio Cinema</h5>
+              <p class="text-muted small">Multi-angle macro cinematography showcasing razor blade cuts and sauce gloss.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY TIMELINE — LUXURY ANIMATED -->
+  <section class="section-padding bg-surface position-relative overflow-hidden">
+    <div class="container position-relative z-1 text-center">
+      <span class="text-overline">Pedagogical Architecture</span>
+      <h2 class="heading-editorial mb-5">Our Learning Path</h2>
+
+      <div class="learning-path-wrapper">
+        <div class="learning-path-connector d-none d-lg-block">
+          <div class="learning-path-beam"></div>
+        </div>
+
+        <div class="row g-4 position-relative z-2">
+          <!-- Step 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="path-card-luxury revealed">
+              <div class="path-step-badge">01</div>
+              <div class="path-icon-glow">
+                <i class="bi bi-compass"></i>
+              </div>
+              <span class="path-phase-pill">Phase 01 — Foundation</span>
+              <h4 class="h5 font-heading mb-3">Discover</h4>
+              <p class="text-muted small mb-0">Deconstruct raw ingredients, flavor architecture, regional spice heritage, and essential culinary chemistry.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="path-card-luxury revealed">
+              <div class="path-step-badge">02</div>
+              <div class="path-icon-glow">
+                <i class="bi bi-play-circle-fill"></i>
+              </div>
+              <span class="path-phase-pill">Phase 02 — Execution</span>
+              <h4 class="h5 font-heading mb-3">Learn</h4>
+              <p class="text-muted small mb-0">Master 4K multi-angle video lessons covering blade physics, exact thermal control, and pan emulsification.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="path-card-luxury revealed">
+              <div class="path-step-badge">03</div>
+              <div class="path-icon-glow">
+                <i class="bi bi-journal-check"></i>
+              </div>
+              <span class="path-phase-pill">Phase 03 — Application</span>
+              <h4 class="h5 font-heading mb-3">Practice</h4>
+              <p class="text-muted small mb-0">Execute curated chef recipes with printable metric ratio sheets, ingredient prep guides, and timer benchmarks.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="path-card-luxury revealed">
+              <div class="path-step-badge">04</div>
+              <div class="path-icon-glow">
+                <i class="bi bi-award-fill"></i>
+              </div>
+              <span class="path-phase-pill">Phase 04 — Mastery</span>
+              <h4 class="h5 font-heading mb-3">Master</h4>
+              <p class="text-muted small mb-0">Improvise with confidence, calibrate seasoning in real time, curate signature menus, and present restaurant-level plates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 1: GLOBAL BENCHMARK STAT METRICS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="text-overline">Proven Excellence</span>
+        <h2 class="heading-editorial">The Culinary Benchmark</h2>
+        <p class="subtitle-editorial mx-auto">Measuring impact across kitchens, Michelin mentorships, and student achievements worldwide.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Stat 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="about-stat-card-luxury card-hover-tilt revealed">
+            <div class="about-stat-icon-circle">
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <div class="about-stat-number">18+</div>
+            <h4 class="h6 font-heading mb-2">Michelin Mentors</h4>
+            <p class="text-muted small mb-0">Multi-starred executive chefs leading course design & live Q&As.</p>
+          </div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="about-stat-card-luxury card-hover-tilt revealed">
+            <div class="about-stat-icon-circle">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <div class="about-stat-number">45K+</div>
+            <h4 class="h6 font-heading mb-2">Global Alumni</h4>
+            <p class="text-muted small mb-0">Passionate home chefs & professionals across 84 countries.</p>
+          </div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="about-stat-card-luxury card-hover-tilt revealed">
+            <div class="about-stat-icon-circle">
+              <i class="bi bi-patch-check-fill"></i>
+            </div>
+            <div class="about-stat-number">99.4%</div>
+            <h4 class="h6 font-heading mb-2">Mastery Rate</h4>
+            <p class="text-muted small mb-0">Technique precision verified by practical kitchen submissions.</p>
+          </div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="about-stat-card-luxury card-hover-tilt revealed">
+            <div class="about-stat-icon-circle">
+              <i class="bi bi-journal-richtext"></i>
+            </div>
+            <div class="about-stat-number">120+</div>
+            <h4 class="h6 font-heading mb-2">Signature Formulas</h4>
+            <p class="text-muted small mb-0">Archived metric ratio sheets & downloadable PDF kitchen guides.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 2: EXECUTIVE FOUNDERS & ACADEMY LEADERSHIP SPOTLIGHT -->
+  <section class="section-padding bg-surface border-top border-bottom border-secondary-subtle mb-5">
+    <div class="container">
+      <div class="row align-items-end mb-5">
+        <div class="col-lg-7 text-center text-lg-start mb-3 mb-lg-0">
+          <span class="text-overline">Visionary Leadership</span>
+          <h2 class="heading-editorial mb-0">Culinary Advisory Board</h2>
+        </div>
+        <div class="col-lg-5 text-center text-lg-end">
+          <p class="text-muted small mb-0">Meet the master chefs and culinary directors shaping the Culinaire curriculum.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Founder 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="founder-card-luxury card-hover-tilt revealed">
+            <div class="founder-img-wrapper">
+              <img src="assets/images/founder_antoine.jpg" alt="Chef Antoine Laurent" loading="lazy">
+              <div class="founder-vignette"></div>
+              <span class="founder-accolade-badge"><i class="bi bi-award-fill me-1"></i> 3 Michelin Stars</span>
+            </div>
+            <div class="card-body-custom d-flex flex-column flex-grow-1">
+              <h3 class="h4 font-heading mb-1">Chef Antoine Laurent</h3>
+              <p class="text-accent small fw-bold text-uppercase mb-3">Co-Founder & Culinary Director</p>
+              <p class="text-muted small mb-4">
+                Pioneering classic French reductions, bone broth clarity, and sauce emulsification theory for over 25 years in Paris and London.
+              </p>
+              <div class="founder-quote-box mt-auto">
+                "Technique is the quiet bridge between raw nature and culinary transcendence."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Founder 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="founder-card-luxury card-hover-tilt revealed">
+            <div class="founder-img-wrapper">
+              <img src="assets/images/founder_sofia.jpg" alt="Chef Sofia Moretti" loading="lazy">
+              <div class="founder-vignette"></div>
+              <span class="founder-accolade-badge"><i class="bi bi-award-fill me-1"></i> 2 Michelin Stars</span>
+            </div>
+            <div class="card-body-custom d-flex flex-column flex-grow-1">
+              <h3 class="h4 font-heading mb-1">Chef Sofia Moretti</h3>
+              <p class="text-accent small fw-bold text-uppercase mb-3">Head of Pasta & Heritage Studies</p>
+              <p class="text-muted small mb-4">
+                Mastering ancient Italian grain hydrations, egg yolk pasta ribbon geometry, and wood-fired oven thermodynamics in Florence.
+              </p>
+              <div class="founder-quote-box mt-auto">
+                "True mastery lies in honoring centuries of heritage while pushing modern precision."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Founder 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="founder-card-luxury card-hover-tilt revealed">
+            <div class="founder-img-wrapper">
+              <img src="assets/images/founder_elena.jpg" alt="Chef Elena Rossi" loading="lazy">
+              <div class="founder-vignette"></div>
+              <span class="founder-accolade-badge"><i class="bi bi-trophy-fill me-1"></i> World Pastry Champion</span>
+            </div>
+            <div class="card-body-custom d-flex flex-column flex-grow-1">
+              <h3 class="h4 font-heading mb-1">Chef Elena Rossi</h3>
+              <p class="text-accent small fw-bold text-uppercase mb-3">Pastry Architecture Lead</p>
+              <p class="text-muted small mb-4">
+                Combining architectural geometry with chocolate seed tempering, mirror glazes, and choux steam expansion mechanics in Milan.
+              </p>
+              <div class="founder-quote-box mt-auto">
+                "We teach pastry not as recipes, but as structural balance and edible geometry."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer-editorial">
+    <div class="container">
+      <div class="row g-4 g-lg-5 mb-5 align-items-start">
+        <!-- Col 1: Brand & Bio -->
+        <div class="col-lg-4">
+          <a href="index.html" class="brand-logo text-white mb-3 d-inline-block">
+            CULINAIRE <span class="brand-accent-dot"></span>
+          </a>
+          <p class="text-white-50 small pe-lg-3 mb-4">
+            Learn the Craft. Master the Plate. A luxury culinary academy connecting home cooks with legendary chefs worldwide.
+          </p>
+          <div class="d-flex gap-3 text-white-50">
+            <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">Navigation</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="masterclasses.html">Masterclasses</a></li>
+            <li><a href="recipes.html">Chef Guides</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Portal Access -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">Portal Access</h5>
+          <ul class="footer-links-list">
+            <li><a href="#" class="auth-trigger-btn">Sign In</a></li>
+            <li><a href="#" class="auth-trigger-btn">Create Account</a></li>
+            <li><a href="#" class="open-dashboard-btn">Executive Portal</a></li>
+            <li><a href="#" class="open-favorites-modal">Saved Favorites</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: HQ & Academy -->
+        <div class="col-lg-4">
+          <h5 class="footer-title">HQ & Academy</h5>
+          <ul class="footer-contact-list list-unstyled small text-white-50 mb-0">
+            <li class="mb-2 d-flex align-items-start">
+              <i class="bi bi-geo-alt text-accent me-2 mt-1"></i>
+              <span>74 Culinary Boulevard, Mayfair, London W1J 8AJ, UK</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-envelope text-accent me-2"></i>
+              <a href="mailto:concierge@culinaire.com" class="text-white-50 text-decoration-none">concierge@culinaire.com</a>
+            </li>
+            <li class="mb-3 d-flex align-items-center">
+              <i class="bi bi-telephone text-accent me-2"></i>
+              <span>+44 20 7946 0912</span>
+            </li>
+          </ul>
+          <span class="footer-hours-badge">
+            <i class="bi bi-clock me-1 text-accent"></i> Mon – Sat (9:00 AM – 8:00 PM GMT)
+          </span>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-4 border-top border-secondary-subtle d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+        <p class="small text-white-50 mb-0">© 2026 CULINAIRE. All rights reserved.</p>
+        <div class="d-flex gap-4 small text-white-50">
+          <a href="about.html" class="text-white-50 text-decoration-none">Privacy Policy</a>
+          <a href="about.html" class="text-white-50 text-decoration-none">Terms of Service</a>
+          <a href="contact.html" class="text-white-50 text-decoration-none">Concierge Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

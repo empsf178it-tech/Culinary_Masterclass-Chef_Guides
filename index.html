@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CULINAIRE — Culinary Masterclasses & Chef Guides</title>
+  <meta name="description" content="Learn the Craft. Master the Plate. Premium culinary masterclasses, chef-led guides, and signature recipes for culinary enthusiasts.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVBAR -->
+  <nav class="culinaire-navbar navbar-transparent px-3 px-lg-5">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-logo me-xl-3">
+        <span class="brand-logo-icon">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" stroke="url(#brandLogoGoldGradNav)" stroke-width="1.5" fill="rgba(184, 115, 51, 0.1)"/>
+            <path d="M16 6.5L18.1 11.6L23.5 12.2L19.5 15.8L20.6 21.2L16 18.5L11.4 21.2L12.5 15.8L8.5 12.2L13.9 11.6L16 6.5Z" fill="url(#brandLogoGoldGradNav)"/>
+            <path d="M8 24.5H24" stroke="url(#brandLogoGoldGradNav)" stroke-width="1.8" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="brandLogoGoldGradNav" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#B87333"/>
+                <stop offset="0.5" stop-color="#F5D061"/>
+                <stop offset="1" stop-color="#D4AF37"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-logo-text">CULINAIRE</span>
+        <span class="brand-accent-dot"></span>
+      </a>
+
+      <!-- Center: Desktop Links (5 Clean Pages) -->
+      <div class="d-none d-xl-flex align-items-center gap-2 gap-xl-4">
+        <a href="index.html" class="nav-link-custom active">Home</a>
+        <a href="masterclasses.html" class="nav-link-custom">Masterclasses</a>
+        <a href="recipes.html" class="nav-link-custom">Chef Guides</a>
+        <a href="about.html" class="nav-link-custom">About</a>
+        <a href="contact.html" class="nav-link-custom">Contact</a>
+      </div>
+
+      <!-- Right: Action Buttons (Desktop icons/CTA on XL+; Hamburger on 1024px & mobile) -->
+      <div class="d-flex align-items-center gap-2 gap-sm-3">
+        <button class="btn-icon search-trigger-btn d-none d-xl-inline-flex" aria-label="Search">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="btn-icon favorites-trigger-btn d-none d-xl-inline-flex" aria-label="Favorites">
+          <i class="bi bi-heart"></i>
+        </button>
+        <button class="btn-icon auth-trigger-btn d-none d-xl-inline-flex" aria-label="Sign In / Account">
+          <i class="bi bi-person"></i>
+        </button>
+        <a href="dashboard.html" class="btn-culinaire btn-culinaire-accent py-2 px-3 text-uppercase d-none d-xl-inline-flex">
+          <i class="bi bi-speedometer2 me-1"></i> DASHBOARD
+        </a>
+        <div class="auth-nav-slot d-none d-xl-inline-block">
+          <!-- Dynamic Auth via main.js -->
+        </div>
+        <button class="hamburger-btn d-xl-none" aria-label="Toggle Navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE SLIDER DRAWER -->
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <div class="mobile-nav-header">
+      <span class="brand-logo fs-4">CULINAIRE <span class="brand-accent-dot"></span></span>
+      <button class="btn-close mobile-nav-close" aria-label="Close"></button>
+    </div>
+
+    <!-- Quick Actions Bar inside Hamburger Drawer (Search, Favorites, Account) -->
+    <div class="mobile-nav-quick-actions">
+      <button class="mobile-nav-action-btn search-trigger-btn" aria-label="Search">
+        <i class="bi bi-search"></i>
+        <span>Search</span>
+      </button>
+      <button class="mobile-nav-action-btn favorites-trigger-btn" aria-label="Favorites">
+        <i class="bi bi-heart"></i>
+        <span>Favorites</span>
+      </button>
+      <button class="mobile-nav-action-btn auth-trigger-btn" aria-label="Sign In / Account">
+        <i class="bi bi-person"></i>
+        <span>Account</span>
+      </button>
+    </div>
+
+    <!-- Main Navigation Links -->
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link fw-bold">Home <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="masterclasses.html" class="mobile-nav-link">Masterclasses <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="recipes.html" class="mobile-nav-link">Chef Guides <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="about.html" class="mobile-nav-link">About <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact <i class="bi bi-arrow-right"></i></a></li>
+    </ul>
+
+    <!-- Bottom CTA inside Drawer -->
+    <div class="mt-auto pt-4 border-top">
+      <a href="dashboard.html" class="btn-culinaire btn-culinaire-accent w-100 py-3 text-uppercase text-center d-flex align-items-center justify-content-center gap-2 font-heading tracking-wider">
+        <i class="bi bi-speedometer2"></i> DASHBOARD PORTAL
+      </a>
+    </div>
+  </div>
+
+
+
+  <!-- SECTION 1 — CINEMATIC HERO -->
+  <section class="hero-editorial">
+    <img src="assets/images/hero_chef.jpg" alt="Executive Chef in Modern Kitchen" class="hero-bg-media">
+    <div class="hero-gradient-overlay"></div>
+    <div class="container hero-content-wrapper">
+      <span class="text-overline text-white-50 tracking-widest mb-3">CULINARY EDUCATION, REIMAGINED</span>
+      <h1 class="hero-title">Learn the Craft.<br>Master the Plate.</h1>
+      <p class="hero-lead-text">
+        Explore expert-led masterclasses, refined cooking techniques, and practical chef guides designed to transform the way you cook.
+      </p>
+      <div class="hero-cta-group gap-3">
+        <a href="masterclasses.html" class="btn-culinaire btn-culinaire-accent">
+          EXPLORE MASTERCLASSES <i class="bi bi-arrow-right btn-arrow"></i>
+        </a>
+        <a href="about.html" class="btn-culinaire btn-culinaire-outline text-white border-white">
+          ABOUT ACADEMY
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL TO DISCOVER</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — BRAND STATEMENT / PHILOSOPHY -->
+  <section class="section-padding bg-surface text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <span class="text-overline">The CULINAIRE Standard</span>
+          <h2 class="heading-editorial my-3">"Cooking is an architectural synthesis of science, technique, and artistic reverence."</h2>
+          <p class="subtitle-editorial mx-auto">
+            We bridge the divide between home kitchens and Michelin-starred culinary academies through cinematic video instruction, precise formulation, and direct guidance from world-renowned chefs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — FEATURED MASTERCLASSES -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+        <div>
+          <span class="text-overline">Learn From the Masters</span>
+          <h2 class="heading-section">Featured Masterclasses</h2>
+          <p class="subtitle-editorial mb-0">Structured lessons created by chefs who live and breathe the craft.</p>
+        </div>
+        <a href="masterclasses.html" class="btn-culinaire btn-culinaire-outline mt-3 mt-md-0">
+          VIEW ALL COURSES <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1: French Sauce Fundamentals -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-culinaire card-hover-tilt">
+            <div class="card-img-wrapper">
+              <img src="assets/images/masterclass_sauces.jpg" alt="French Sauce Fundamentals" loading="lazy">
+              <button class="btn-icon fav-toggle-btn position-absolute top-0 end-0 m-3" data-type="masterclass" data-id="mc-french-sauces">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+            <div class="card-body-custom">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-editorial">Sauces</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i>4.9</span>
+              </div>
+              <h3 class="card-title-custom"><a href="masterclass-detail.html?id=mc-french-sauces">French Sauce Fundamentals</a></h3>
+              <p class="text-muted small mb-3">Chef Antoine Laurent</p>
+              <div class="card-meta-list">
+                <span class="card-meta-item"><i class="bi bi-play-circle me-1"></i>8 Lessons</span>
+                <span class="card-meta-item"><i class="bi bi-bar-chart me-1"></i>Beginner</span>
+              </div>
+              <div class="card-footer-custom">
+                <a href="masterclass-detail.html?id=mc-french-sauces" class="btn-culinaire btn-culinaire-outline btn-sm w-100">
+                  EXPLORE COURSE <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Modern Indian Cuisine -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-culinaire card-hover-tilt">
+            <div class="card-img-wrapper">
+              <img src="assets/images/masterclass_indian.jpg" alt="Modern Indian Cuisine" loading="lazy">
+              <button class="btn-icon fav-toggle-btn position-absolute top-0 end-0 m-3" data-type="masterclass" data-id="mc-modern-indian">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+            <div class="card-body-custom">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-editorial">World Cuisine</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i>4.9</span>
+              </div>
+              <h3 class="card-title-custom"><a href="masterclass-detail.html?id=mc-modern-indian">Modern Indian Cuisine</a></h3>
+              <p class="text-muted small mb-3">Chef Arjun Rao</p>
+              <div class="card-meta-list">
+                <span class="card-meta-item"><i class="bi bi-play-circle me-1"></i>12 Lessons</span>
+                <span class="card-meta-item"><i class="bi bi-bar-chart me-1"></i>Intermediate</span>
+              </div>
+              <div class="card-footer-custom">
+                <a href="masterclass-detail.html?id=mc-modern-indian" class="btn-culinaire btn-culinaire-outline btn-sm w-100">
+                  EXPLORE COURSE <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Artisan Pasta -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-culinaire card-hover-tilt">
+            <div class="card-img-wrapper">
+              <img src="assets/images/masterclass_pasta.jpg" alt="Artisan Pasta" loading="lazy">
+              <button class="btn-icon fav-toggle-btn position-absolute top-0 end-0 m-3" data-type="masterclass" data-id="mc-artisan-pasta">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+            <div class="card-body-custom">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-editorial">Fundamentals</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i>5.0</span>
+              </div>
+              <h3 class="card-title-custom"><a href="masterclass-detail.html?id=mc-artisan-pasta">Artisan Pasta from Scratch</a></h3>
+              <p class="text-muted small mb-3">Chef Sofia Moretti</p>
+              <div class="card-meta-list">
+                <span class="card-meta-item"><i class="bi bi-play-circle me-1"></i>10 Lessons</span>
+                <span class="card-meta-item"><i class="bi bi-bar-chart me-1"></i>Intermediate</span>
+              </div>
+              <div class="card-footer-custom">
+                <a href="masterclass-detail.html?id=mc-artisan-pasta" class="btn-culinaire btn-culinaire-outline btn-sm w-100">
+                  EXPLORE COURSE <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Modern Pastry Kitchen -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-culinaire card-hover-tilt">
+            <div class="card-img-wrapper">
+              <img src="assets/images/masterclass_pastry.jpg" alt="Modern Pastry Kitchen" loading="lazy">
+              <button class="btn-icon fav-toggle-btn position-absolute top-0 end-0 m-3" data-type="masterclass" data-id="mc-modern-pastry">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+            <div class="card-body-custom">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-editorial">Pastry</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i>4.9</span>
+              </div>
+              <h3 class="card-title-custom"><a href="masterclass-detail.html?id=mc-modern-pastry">The Modern Pastry Kitchen</a></h3>
+              <p class="text-muted small mb-3">Chef Elena Rossi</p>
+              <div class="card-meta-list">
+                <span class="card-meta-item"><i class="bi bi-play-circle me-1"></i>14 Lessons</span>
+                <span class="card-meta-item"><i class="bi bi-bar-chart me-1"></i>Advanced</span>
+              </div>
+              <div class="card-footer-custom">
+                <a href="masterclass-detail.html?id=mc-modern-pastry" class="btn-culinaire btn-culinaire-outline btn-sm w-100">
+                  EXPLORE COURSE <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — METHODOLOGY TIMELINE -->
+  <section class="section-padding bg-surface position-relative overflow-hidden">
+    <div class="container position-relative z-1">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge badge-editorial mb-2"><i class="bi bi-diagram-3 me-1"></i>PEDAGOGICAL ARCHITECTURE</span>
+        <h2 class="heading-section">The Learning Path</h2>
+        <p class="subtitle-editorial mx-auto">A structured four-tier pedagogical approach to internalizing culinary art.</p>
+      </div>
+
+      <div class="timeline-editorial">
+        <!-- Phase 1 -->
+        <div class="timeline-item">
+          <div class="timeline-number">
+            <span>1</span>
+            <span class="timeline-number-ring"></span>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <span class="text-overline text-accent mb-0"><i class="bi bi-search me-1"></i>Phase 01</span>
+              <span class="badge bg-secondary-subtle text-muted small">FOUNDATION</span>
+            </div>
+            <h4 class="font-heading fs-4 text-main mb-2">Discover</h4>
+            <p class="text-muted mb-0">Deconstruct raw ingredients, chemical flavor transformations, and regional spice heritage under master guidance.</p>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="timeline-item">
+          <div class="timeline-number">
+            <span>2</span>
+            <span class="timeline-number-ring"></span>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <span class="text-overline text-accent mb-0"><i class="bi bi-play-circle me-1"></i>Phase 02</span>
+              <span class="badge bg-secondary-subtle text-muted small">EXECUTION</span>
+            </div>
+            <h4 class="font-heading fs-4 text-main mb-2">Learn</h4>
+            <p class="text-muted mb-0">Study step-by-step 4K multi-angle video masterclasses focusing on blade physics, precise thermal control, and sauce emulsions.</p>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="timeline-item">
+          <div class="timeline-number">
+            <span>3</span>
+            <span class="timeline-number-ring"></span>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <span class="text-overline text-accent mb-0"><i class="bi bi-journal-check me-1"></i>Phase 03</span>
+              <span class="badge bg-secondary-subtle text-muted small">APPLICATION</span>
+            </div>
+            <h4 class="font-heading fs-4 text-main mb-2">Practice</h4>
+            <p class="text-muted mb-0">Apply techniques with curated chef guides, printable ratio blueprint cards, and structured ingredient pairing lists.</p>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="timeline-item">
+          <div class="timeline-number">
+            <span>4</span>
+            <span class="timeline-number-ring"></span>
+          </div>
+          <div class="timeline-content">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <span class="text-overline text-accent mb-0"><i class="bi bi-award-fill me-1"></i>Phase 04</span>
+              <span class="badge bg-accent text-white small">MASTERY</span>
+            </div>
+            <h4 class="font-heading fs-4 text-main mb-2">Master</h4>
+            <p class="text-muted mb-0">Improvise flavor profiles with confidence, master Michelin restaurant-style plating, and curate your signature tasting menu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — CHEFS SPOTLIGHT -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+        <div>
+          <span class="badge badge-editorial mb-2"><i class="bi bi-star-fill me-1"></i>WORLD-CLASS MASTERS</span>
+          <h2 class="heading-section">Culinary Mentors</h2>
+          <p class="subtitle-editorial mb-0">Learn directly from Michelin executive chefs and legendary gastronomy artisans.</p>
+        </div>
+        <a href="masterclasses.html" class="btn-culinaire btn-culinaire-outline mt-3 mt-md-0">
+          EXPLORE MASTERCLASSES <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Chef 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="chef-card-luxury">
+            <div class="chef-avatar-wrapper">
+              <img src="assets/images/chef_arjun.jpg" alt="Chef Arjun Rao">
+              <div class="chef-badge-overlay">
+                <span class="badge bg-warning text-dark font-heading fw-bold"><i class="bi bi-award-fill me-1"></i>2 MICHELIN STARS</span>
+              </div>
+              <div class="chef-info-overlay">
+                <span class="text-accent text-uppercase tracking-wider small fw-bold mb-1 d-block">Modern Indian Gastronomy</span>
+                <h3 class="font-heading text-white fs-4 mb-1">Chef Arjun Rao</h3>
+                <p class="text-white-50 small mb-3"><i class="bi bi-geo-alt me-1 text-accent"></i>Mumbai & London &bull; 18 Yrs Experience</p>
+                <a href="masterclass-detail.html?id=mc-modern-indian" class="btn-culinaire btn-culinaire-accent btn-sm w-100 py-2.5 text-uppercase">
+                  VIEW MASTERCLASS <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chef 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="chef-card-luxury">
+            <div class="chef-avatar-wrapper">
+              <img src="assets/images/chef_sofia.jpg" alt="Chef Sofia Moretti">
+              <div class="chef-badge-overlay">
+                <span class="badge bg-danger text-white font-heading fw-bold"><i class="bi bi-award-fill me-1"></i>PASTA MASTER 2024</span>
+              </div>
+              <div class="chef-info-overlay">
+                <span class="text-accent text-uppercase tracking-wider small fw-bold mb-1 d-block">Artisan Pasta Geometry</span>
+                <h3 class="font-heading text-white fs-4 mb-1">Chef Sofia Moretti</h3>
+                <p class="text-white-50 small mb-3"><i class="bi bi-geo-alt me-1 text-accent"></i>Bologna, Italy &bull; 15 Yrs Experience</p>
+                <a href="masterclass-detail.html?id=mc-artisan-pasta" class="btn-culinaire btn-culinaire-accent btn-sm w-100 py-2.5 text-uppercase">
+                  VIEW MASTERCLASS <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chef 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="chef-card-luxury">
+            <div class="chef-avatar-wrapper">
+              <img src="assets/images/hero_chef.jpg" alt="Chef Antoine Laurent">
+              <div class="chef-badge-overlay">
+                <span class="badge bg-warning text-dark font-heading fw-bold"><i class="bi bi-award-fill me-1"></i>MOF MASTER CHEF</span>
+              </div>
+              <div class="chef-info-overlay">
+                <span class="text-accent text-uppercase tracking-wider small fw-bold mb-1 d-block">French Classical Sauces</span>
+                <h3 class="font-heading text-white fs-4 mb-1">Chef Antoine Laurent</h3>
+                <p class="text-white-50 small mb-3"><i class="bi bi-geo-alt me-1 text-accent"></i>Lyon & Paris &bull; 24 Yrs Experience</p>
+                <a href="masterclass-detail.html?id=mc-french-sauces" class="btn-culinaire btn-culinaire-accent btn-sm w-100 py-2.5 text-uppercase">
+                  VIEW MASTERCLASS <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — NEWSLETTER CALLOUT -->
+  <section class="section-padding bg-surface border-top border-bottom">
+    <div class="container text-center max-w-700 mx-auto">
+      <span class="text-overline">The Weekly Digest</span>
+      <h2 class="heading-section my-2">Refine Your Palate</h2>
+      <p class="subtitle-editorial mx-auto mb-4">
+        Receive weekly chef technique notes, secret seasonal pairings, and early access to new masterclass enrollments.
+      </p>
+      <form class="d-flex flex-column flex-sm-row gap-2 justify-content-center" onsubmit="event.preventDefault(); showToast('Subscribed to CULINAIRE Digest!', 'success'); this.reset();">
+        <input type="email" class="form-control form-control-lg bg-card-bg border-border text-main" placeholder="Enter your email address..." required style="max-width: 400px;">
+        <button type="submit" class="btn-culinaire btn-culinaire-primary">SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer-editorial">
+    <div class="container">
+      <div class="row g-4 g-lg-5 mb-5 align-items-start">
+        <!-- Col 1: Brand & Bio -->
+        <div class="col-lg-4">
+          <a href="index.html" class="brand-logo text-white mb-3 d-inline-block">
+            CULINAIRE <span class="brand-accent-dot"></span>
+          </a>
+          <p class="text-white-50 small pe-lg-3 mb-4">
+            Learn the Craft. Master the Plate. A luxury culinary academy connecting home cooks with legendary chefs worldwide.
+          </p>
+          <div class="d-flex gap-3 text-white-50">
+            <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">Navigation</h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="masterclasses.html">Masterclasses</a></li>
+            <li><a href="recipes.html">Chef Guides</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Portal Access -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">Portal Access</h5>
+          <ul class="footer-links-list">
+            <li><a href="#" class="auth-trigger-btn">Sign In</a></li>
+            <li><a href="#" class="auth-trigger-btn">Create Account</a></li>
+            <li><a href="#" class="open-dashboard-btn">Executive Portal</a></li>
+            <li><a href="#" class="open-favorites-modal">Saved Favorites</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: HQ & Academy -->
+        <div class="col-lg-4">
+          <h5 class="footer-title">HQ & Academy</h5>
+          <ul class="footer-contact-list list-unstyled small text-white-50 mb-0">
+            <li class="mb-2 d-flex align-items-start">
+              <i class="bi bi-geo-alt text-accent me-2 mt-1"></i>
+              <span>74 Culinary Boulevard, Mayfair, London W1J 8AJ, UK</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="bi bi-envelope text-accent me-2"></i>
+              <a href="mailto:concierge@culinaire.com" class="text-white-50 text-decoration-none">concierge@culinaire.com</a>
+            </li>
+            <li class="mb-3 d-flex align-items-center">
+              <i class="bi bi-telephone text-accent me-2"></i>
+              <span>+44 20 7946 0912</span>
+            </li>
+          </ul>
+          <span class="footer-hours-badge">
+            <i class="bi bi-clock me-1 text-accent"></i> Mon – Sat (9:00 AM – 8:00 PM GMT)
+          </span>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-4 border-top border-secondary-subtle d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+        <p class="small text-white-50 mb-0">© 2026 CULINAIRE. All rights reserved.</p>
+        <div class="d-flex gap-4 small text-white-50">
+          <a href="about.html" class="text-white-50 text-decoration-none">Privacy Policy</a>
+          <a href="about.html" class="text-white-50 text-decoration-none">Terms of Service</a>
+          <a href="contact.html" class="text-white-50 text-decoration-none">Concierge Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Application JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

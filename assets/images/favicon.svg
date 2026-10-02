@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="culinaireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="50%" stop-color="#F3E5AB" />
+      <stop offset="100%" stop-color="#AA7C11" />
+    </linearGradient>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1F1C1B" />
+      <stop offset="100%" stop-color="#0D0B0A" />
+    </radialGradient>
+  </defs>
+  <!-- Background Shape -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect x="20" y="20" width="472" height="472" rx="108" fill="none" stroke="url(#culinaireGrad)" stroke-width="6" opacity="0.4" />
+  
+  <!-- Stylized C Monogram + Culinary Crown -->
+  <g>
+    <!-- Masterclass Crown / Flame -->
+    <path d="M256 95 L278 145 L328 132 L302 178 L345 208 L294 216 L256 260 L218 216 L167 208 L210 178 L184 132 L234 145 Z" fill="url(#culinaireGrad)" />
+    <!-- Monogram C curve -->
+    <path d="M350 330 C315 375 255 390 200 370 C145 348 120 288 132 230 C144 172 198 135 255 135 C295 135 330 152 355 182" fill="none" stroke="url(#culinaireGrad)" stroke-width="32" stroke-linecap="round" />
+    <!-- Accent Diamond/Dot -->
+    <circle cx="365" cy="365" r="18" fill="url(#culinaireGrad)" />
+  </g>
+</svg>

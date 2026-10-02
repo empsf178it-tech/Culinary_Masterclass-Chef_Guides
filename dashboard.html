@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Student Portal — CULINAIRE</title>
+  <meta name="description" content="Exclusive CULINAIRE Student Portal & Executive Learning Dashboard.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <script>window.location.replace('index.html?openDashboard=true');</script>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Core Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Dedicated Executive Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="portal-mode">
+
+  <!-- SLEEK PORTAL TOP HEADER BAR (Distraction-Free App View) -->
+  <header class="portal-header-bar">
+    <!-- Left: Return to Site -->
+    <a href="index.html" class="btn-culinaire btn-culinaire-outline py-2 px-3 small">
+      <i class="bi bi-arrow-left me-1"></i> RETURN TO SITE
+    </a>
+
+    <!-- Center: Portal Title -->
+    <div class="portal-brand">
+      <span>CULINAIRE</span>
+      <span class="brand-accent-dot"></span>
+      <span class="text-muted fs-6 fw-normal d-none d-md-inline ms-2">Executive Portal</span>
+    </div>
+
+    <!-- Right: App Controls -->
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn-icon" aria-label="Notifications" onclick="showToast('You have 2 new chef announcements', 'info')">
+        <i class="bi bi-bell"></i>
+      </button>
+      <button class="btn-icon d-none d-sm-inline-flex open-profile-modal-btn" aria-label="Profile Settings" title="Profile & Settings">
+        <i class="bi bi-person-gear"></i>
+      </button>
+      <a href="index.html" class="btn-icon border-danger text-danger" aria-label="Exit Portal" title="Close Portal">
+        <i class="bi bi-x-lg"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- DASHBOARD MAIN CONTENT PORTAL -->
+  <main class="container portal-main-content">
+
+    <!-- WELCOME EDITORIAL BANNER -->
+    <div class="welcome-card-editorial mb-5">
+      <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-4">
+        <div class="d-flex align-items-center gap-4">
+          <div class="user-avatar-badge flex-shrink-0" id="dashboard-user-avatar">CS</div>
+          <div>
+            <span class="badge badge-editorial mb-2" id="dashboard-user-level"><i class="bi bi-star-fill text-warning me-1"></i> Executive Member</span>
+            <h1 class="heading-editorial fs-2 mb-1"><span id="dynamic-greeting">Good Evening</span>, <span id="dashboard-user-name">Chef</span></h1>
+            <p class="text-muted small mb-0" id="dashboard-user-meta"><i class="bi bi-geo-alt me-1"></i> London, UK • Enrolled in Modern Indian & French Sauces</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button id="open-admin-modal-btn" class="btn-culinaire btn-culinaire-outline">
+            <i class="bi bi-shield-lock me-1"></i> ADMIN CONSOLE
+          </button>
+          <button class="btn-culinaire btn-culinaire-primary open-profile-modal-btn">
+            EDIT PROFILE <i class="bi bi-gear ms-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI STATS METRICS GRID -->
+    <div class="row g-4 mb-5">
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon-box"><i class="bi bi-journal-bookmark"></i></div>
+          <div class="kpi-value" data-target="2">0</div>
+          <div class="kpi-title">Enrolled Courses</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon-box"><i class="bi bi-check2-circle"></i></div>
+          <div class="kpi-value" data-target="9">0</div>
+          <div class="kpi-title">Completed Lessons</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon-box"><i class="bi bi-clock-history"></i></div>
+          <div class="kpi-value" data-target="14">0</div>
+          <div class="kpi-title">Learning Hours</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon-box"><i class="bi bi-award"></i></div>
+          <div class="kpi-value">Rank 2</div>
+          <div class="kpi-title">Intermediate Scholar</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN TWO COLUMN GRID -->
+    <div class="row g-5">
+
+      <!-- LEFT COLUMN: ACTIVE COURSE HERO & SAVED RECIPES -->
+      <div class="col-lg-8">
+
+        <!-- ACTIVE COURSE VIDEO HERO -->
+        <div class="mb-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <span class="text-overline">Current Course</span>
+              <h3 class="font-heading fs-3 mb-0">Continue Learning</h3>
+            </div>
+            <span class="badge badge-editorial"><i class="bi bi-play-circle me-1"></i> In Progress</span>
+          </div>
+
+          <div class="hero-course-card">
+            <div class="video-preview-wrapper">
+              <img src="assets/images/masterclass_indian.jpg" alt="Modern Indian Cuisine Video Preview">
+              <button id="play-lesson-hero-btn" class="play-overlay-btn" aria-label="Play Lesson">
+                <i class="bi bi-play-fill ms-1"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="text-accent small text-uppercase tracking-wider fw-semibold">Modern Indian Cuisine</span>
+                <span class="text-muted small"><i class="bi bi-clock me-1"></i> 14:20 / 35:00</span>
+              </div>
+              <h4 class="font-heading fs-4 mb-2">Lesson 05 — Slow Cooking & Emulsification Techniques</h4>
+              <p class="text-muted small mb-3">Chef Arjun Rao demonstrates temperature-controlled fat rendering and spice oil blooming.</p>
+              
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="progress-bar-culinaire flex-grow-1">
+                  <div class="progress-fill" style="width: 42%;"></div>
+                </div>
+                <span class="fw-bold small text-accent">42% Complete</span>
+              </div>
+
+              <a href="masterclass-detail.html" class="btn-culinaire btn-culinaire-accent w-100 py-3">
+                RESUME LESSON 05 <i class="bi bi-play-fill ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECENT ACHIEVEMENTS & CERTIFICATIONS -->
+        <div class="mb-5">
+          <span class="text-overline">Milestones</span>
+          <h3 class="font-heading fs-3 mb-3">Culinary Achievements</h3>
+          <div class="d-flex flex-wrap gap-3">
+            <div class="achievement-badge">
+              <div class="badge-icon-shield"><i class="bi bi-shield-check"></i></div>
+              <div>
+                <h6 class="mb-0 fw-semibold fs-6">Knife Skills Level 1</h6>
+                <span class="text-muted small">Certified by Chef Antoine</span>
+              </div>
+            </div>
+
+            <div class="achievement-badge">
+              <div class="badge-icon-shield"><i class="bi bi-droplet-half"></i></div>
+              <div>
+                <h6 class="mb-0 fw-semibold fs-6">Sauce Emulsion Mastery</h6>
+                <span class="text-muted small">Certified by Chef Antoine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: LIVE Q&A SESSIONS & MENTORSHIP NOTE -->
+      <div class="col-lg-4">
+
+        <!-- UPCOMING LIVE CHEF Q&A -->
+        <div class="sidebar-widget mb-4">
+          <span class="text-overline">Academy Events</span>
+          <h4 class="font-heading mb-4 fs-4">Upcoming Live Sessions</h4>
+
+          <div class="p-3 bg-surface border rounded mb-3">
+            <span class="badge bg-danger-subtle text-danger small mb-2"><i class="bi bi-broadcast me-1"></i> Live Stream</span>
+            <h5 class="font-heading fs-6 mb-1">French Sauce Reduction Q&A</h5>
+            <p class="text-muted small mb-2"><i class="bi bi-person me-1"></i> Chef Antoine Laurent</p>
+            <p class="text-muted small mb-3"><i class="bi bi-calendar-event me-1"></i> Tomorrow • 6:00 PM GMT</p>
+            <button class="btn-culinaire btn-culinaire-outline btn-sm w-100 rsvp-session-btn">
+              RSVP TO SESSION <i class="bi bi-calendar-plus ms-1"></i>
+            </button>
+          </div>
+
+          <div class="p-3 bg-surface border rounded">
+            <span class="badge bg-primary-subtle text-primary small mb-2"><i class="bi bi-camera-video me-1"></i> Interactive Workshop</span>
+            <h5 class="font-heading fs-6 mb-1">Tortellini Dough Geometry</h5>
+            <p class="text-muted small mb-2"><i class="bi bi-person me-1"></i> Chef Sofia Moretti</p>
+            <p class="text-muted small mb-3"><i class="bi bi-calendar-event me-1"></i> Friday • 4:00 PM GMT</p>
+            <button class="btn-culinaire btn-culinaire-outline btn-sm w-100 rsvp-session-btn">
+              RSVP TO SESSION <i class="bi bi-calendar-plus ms-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- CHEF MENTORSHIP NOTE -->
+        <div class="sidebar-widget bg-surface">
+          <span class="text-overline">Chef's Advice</span>
+          <h4 class="font-heading mb-3 fs-5">Mentorship Note</h4>
+          <blockquote class="italic text-muted small mb-3">
+            "Never compromise on oil tempering temperature. Low heat blooms spices without scorching delicate volatile aromatics."
+          </blockquote>
+          <div class="d-flex align-items-center gap-2">
+            <img src="assets/images/chef_arjun.jpg" alt="Chef Arjun Rao" class="rounded-circle" style="width: 38px; height: 38px; object-fit: cover;">
+            <div>
+              <h6 class="mb-0 font-heading small">Chef Arjun Rao</h6>
+              <span class="text-muted text-uppercase" style="font-size: 0.7rem;">Executive Mentor</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  <!-- PROFILE & SETTINGS MODAL -->
+  <div id="profile-modal-backdrop" class="admin-modal-backdrop">
+    <div class="admin-modal-container" style="max-width: 750px;">
+      <div class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom">
+        <div>
+          <span class="badge badge-editorial"><i class="bi bi-gear-fill me-1"></i> Account Settings</span>
+          <h2 class="heading-section fs-3 mb-0 mt-1">Profile & Preferences</h2>
+        </div>
+        <button id="close-profile-modal-btn" class="btn-close" aria-label="Close"></button>
+      </div>
+
+      <form id="dash-profile-form">
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-semibold">Full Name</label>
+            <input type="text" id="dash-profile-name" class="form-control py-3" placeholder="e.g. Chef Auguste" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-semibold">Email Address</label>
+            <input type="email" id="dash-profile-email" class="form-control py-3" placeholder="e.g. auguste@culinaire.com" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-semibold">Location</label>
+            <input type="text" id="dash-profile-location" class="form-control py-3" placeholder="e.g. London, United Kingdom">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label text-muted small fw-semibold">Cooking Skill Level</label>
+            <select id="dash-profile-level" class="form-select py-3">
+              <option value="Beginner">Beginner (Foundations)</option>
+              <option value="Intermediate">Intermediate (Refining)</option>
+              <option value="Advanced">Advanced (Michelin Standards)</option>
+            </select>
+          </div>
+        </div>
+
+        <h5 class="font-heading fs-6 mb-3">Favorite Cuisines & Specialties</h5>
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="form-check">
+            <input class="form-check-input dash-cuisine-checkbox" type="checkbox" id="dash-cuis-indian" value="Indian">
+            <label class="form-check-label" for="dash-cuis-indian">Indian</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input dash-cuisine-checkbox" type="checkbox" id="dash-cuis-italian" value="Italian">
+            <label class="form-check-label" for="dash-cuis-italian">Italian</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input dash-cuisine-checkbox" type="checkbox" id="dash-cuis-french" value="French">
+            <label class="form-check-label" for="dash-cuis-french">French</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input dash-cuisine-checkbox" type="checkbox" id="dash-cuis-japanese" value="Japanese">
+            <label class="form-check-label" for="dash-cuis-japanese">Japanese</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input dash-cuisine-checkbox" type="checkbox" id="dash-cuis-mediterranean" value="Mediterranean">
+            <label class="form-check-label" for="dash-cuis-mediterranean">Mediterranean</label>
+          </div>
+        </div>
+
+        <h5 class="font-heading fs-6 mb-3">Notifications & Portal Preferences</h5>
+        <div class="p-3 bg-surface border rounded mb-4">
+          <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" id="dash-notify-live" checked>
+            <label class="form-check-label small fw-semibold" for="dash-notify-live">Live Masterclass & Q&A Event Reminders</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="dash-notify-digest" checked>
+            <label class="form-check-label small fw-semibold" for="dash-notify-digest">Weekly Editorial Digest & Chef Notes</label>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" id="cancel-profile-modal-btn" class="btn-culinaire btn-culinaire-outline">CANCEL</button>
+          <button type="submit" class="btn-culinaire btn-culinaire-primary">
+            SAVE UPDATES <i class="bi bi-check-lg ms-1"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SIMULATED ADMIN CONSOLE DRAWER MODAL -->
+  <div id="admin-modal-backdrop" class="admin-modal-backdrop">
+    <div class="admin-modal-container">
+      <div class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom">
+        <div>
+          <span class="badge badge-editorial">Admin Console</span>
+          <h2 class="heading-section fs-3 mb-0 mt-1">Platform Analytics & Management</h2>
+        </div>
+        <button id="close-admin-modal-btn" class="btn-close" aria-label="Close"></button>
+      </div>
+
+      <!-- KPI Metrics -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-surface border rounded text-center">
+            <span class="text-muted small text-uppercase">Total Students</span>
+            <h3 class="font-heading text-accent mb-0 mt-1">12,480</h3>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-surface border rounded text-center">
+            <span class="text-muted small text-uppercase">Active Masterclasses</span>
+            <h3 class="font-heading text-accent mb-0 mt-1">18</h3>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-surface border rounded text-center">
+            <span class="text-muted small text-uppercase">Published Recipes</span>
+            <h3 class="font-heading text-accent mb-0 mt-1">142</h3>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 bg-surface border rounded text-center">
+            <span class="text-muted small text-uppercase">Completion Rate</span>
+            <h3 class="font-heading text-accent mb-0 mt-1">84.2%</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weekly Analytics Bars -->
+      <div class="p-4 bg-surface border rounded mb-4">
+        <h5 class="font-heading fs-6 mb-3">Weekly Student Enrollments</h5>
+        <div class="chart-bar-group">
+          <div class="chart-bar-item" data-height="65%"><span class="chart-bar-label">Mon</span></div>
+          <div class="chart-bar-item" data-height="85%"><span class="chart-bar-label">Tue</span></div>
+          <div class="chart-bar-item" data-height="50%"><span class="chart-bar-label">Wed</span></div>
+          <div class="chart-bar-item" data-height="95%"><span class="chart-bar-label">Thu</span></div>
+          <div class="chart-bar-item" data-height="70%"><span class="chart-bar-label">Fri</span></div>
+          <div class="chart-bar-item" data-height="90%"><span class="chart-bar-label">Sat</span></div>
+          <div class="chart-bar-item" data-height="100%"><span class="chart-bar-label">Sun</span></div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="d-flex flex-wrap gap-2 justify-content-end">
+        <button class="btn-culinaire btn-culinaire-outline btn-sm" onclick="showToast('Demo Management: Backend integration required', 'info')"><i class="bi bi-gear me-1"></i> Manage Courses</button>
+        <button class="btn-culinaire btn-culinaire-outline btn-sm" onclick="showToast('Demo Management: Backend integration required', 'info')"><i class="bi bi-journal-text me-1"></i> Manage Recipes</button>
+        <button class="btn-culinaire btn-culinaire-accent btn-sm" onclick="showToast('Demo Management: Backend integration required', 'info')"><i class="bi bi-people me-1"></i> Manage Faculty</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLEEK MINIMAL APP FOOTER BAR -->
+  <footer class="portal-footer-bar">
+    <span>© 2026 CULINAIRE Executive Student Portal. Confidential & Proprietary.</span>
+    <div class="d-none d-sm-flex gap-3">
+      <a href="about.html" class="text-muted">Academy Terms</a>
+      <a href="about.html" class="text-muted">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
