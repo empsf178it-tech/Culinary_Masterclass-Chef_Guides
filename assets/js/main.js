@@ -809,6 +809,12 @@
               <i class="bi bi-lock auth-input-icon"></i>
               <input type="password" id="modal-reg-pass" class="auth-input-field ps-5" placeholder="Create Password" required value="••••••••">
             </div>
+            <div class="mb-3">
+              <label class="form-check-label small text-muted d-flex align-items-start gap-2" for="modal-reg-terms">
+                <input type="checkbox" id="modal-reg-terms" class="form-check-input mt-1 flex-shrink-0" required>
+                <span>I agree to the <a href="#" class="text-accent text-decoration-none" onclick="showToast('Terms & Conditions will open soon', 'info'); return false;">Terms &amp; Conditions</a> and <a href="#" class="text-accent text-decoration-none" onclick="showToast('Privacy Policy will open soon', 'info'); return false;">Privacy Policy</a>.</span>
+              </label>
+            </div>
             <button type="submit" class="btn-culinaire btn-culinaire-primary w-100 py-3 text-uppercase font-heading fw-bold tracking-wider">
               CREATE ACCOUNT <i class="bi bi-person-plus ms-1"></i>
             </button>
@@ -930,6 +936,11 @@
     if (regForm) {
       regForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        const terms = overlay.querySelector('#modal-reg-terms');
+        if (terms && !terms.checked) {
+          showToast('Please accept the Terms & Conditions to create an account', 'error');
+          return;
+        }
         const name = overlay.querySelector('#modal-reg-name').value || 'New Student';
         const email = overlay.querySelector('#modal-reg-email').value || 'student@culinaire.com';
         const user = {
@@ -1110,7 +1121,7 @@
           <div class="dash-modal-sidebar">
             <div>
               <div class="dash-sidebar-header">
-                <span class="brand-logo fs-4">CULINAIRE <span class="brand-accent-dot"></span></span>
+                <a href="index.html" class="dash-brand-link text-decoration-none" aria-label="Go to homepage"><span class="brand-logo fs-4">CULINAIRE <span class="brand-accent-dot"></span></span></a>
                 <p class="text-muted small mb-0 mt-1">Student Portal</p>
               </div>
 
@@ -1133,7 +1144,7 @@
 
             <!-- Sidebar Footer -->
             <div class="pt-3 border-top">
-              <button type="button" class="btn btn-link text-danger text-decoration-none p-0 small fw-semibold logout-btn">
+              <button type="button" class="btn btn-link text-danger text-decoration-none p-0 small fw-semibold dash-signout-btn">
                 <i class="bi bi-box-arrow-right me-1"></i> Sign Out
               </button>
             </div>
@@ -1366,6 +1377,24 @@
 
     // Global Click Listener for Popup Dashboard & Side Menu Tabs
     document.addEventListener('click', (e) => {
+      if (e.target.closest('.dash-signout-btn')) {
+        e.preventDefault();
+        Storage.clearUser();
+        closeModal();
+        showToast('Signed out successfully', 'info');
+        setTimeout(() => { window.location.href = 'index.html'; }, 600);
+        return;
+      }
+
+      if (e.target.closest('.dash-brand-link')) {
+        e.preventDefault();
+        closeModal();
+        if (!/(^|\/)(index\.html)?$/.test(window.location.pathname)) {
+          window.location.href = 'index.html';
+        }
+        return;
+      }
+
       const trigger = e.target.closest('a[href*="dashboard.html"], .open-dashboard-btn');
       if (trigger) {
         e.preventDefault();
